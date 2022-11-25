@@ -94,6 +94,7 @@ jobs:
         run: moodle-plugin-ci codechecker
 
       - name: Moodle PHPDoc Checker
+        continue-on-error: true # This step will show errors but will not fail
         if: ${{ always() }}
         run: moodle-plugin-ci phpdoc
 
@@ -106,10 +107,12 @@ jobs:
         run: moodle-plugin-ci savepoints
 
       - name: mustache
+        continue-on-error: true # This step will show errors but will not fail
         if: ${{ always() }}
         run: moodle-plugin-ci mustache
 
       - name: grunt
+        continue-on-error: true # This step will show errors but will not fail
         if: ${{ always() }}
         run: moodle-plugin-ci grunt
 
